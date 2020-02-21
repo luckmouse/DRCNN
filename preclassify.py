@@ -83,15 +83,6 @@ def hcluster(pix_vec, im_di):
     idx_sort = np.argsort(idxmean)
     for i in range(0, 5):
         idx.append(idx_tmp[idx_sort[i]])
-
-    print('ttl : ', ttl)
-    print('ttr : ', ttr)
-    print(len(idx[0]), idxmean[idx_sort[0]])
-    print(len(idx[1]), idxmean[idx_sort[1]])
-    print(len(idx[2]), idxmean[idx_sort[2]])
-    print(len(idx[3]), idxmean[idx_sort[3]])
-    print(len(idx[4]), idxmean[idx_sort[4]])
-
     c = len(idx[4])
     res_lab[idx[4]] = 1
     flag_mid = 0
@@ -107,7 +98,6 @@ def hcluster(pix_vec, im_di):
             flag_mid = 1
         else:
             res_lab[idx[4-i]] = 0
-
     res_lab = res_lab.reshape(ylen, xlen)
     return res_lab
 
