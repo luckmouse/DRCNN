@@ -71,7 +71,7 @@ def hcluster(pix_vec, im_di):
     fcm = FCM(n_clusters=5)
     fcm.fit(pix_vec)
     fcm_lab  = fcm.u.argmax(axis=1)
-
+    ylen, xlen = im_di.shape
     idx = []
     idx_tmp = []
     idxmean = []
