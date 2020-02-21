@@ -1,7 +1,7 @@
 from fcm import FCM
 import numpy as np
 
-def hclustering(pix_vec, im_di):
+def hcluster(pix_vec, im_di):
     print('... ... 1st round clustering ... ...')
     fcm = FCM(n_clusters=2)
     fcm.fit(pix_vec)
