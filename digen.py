@@ -1,4 +1,5 @@
 import numpy as np
+from scipy import signal
 
 def del2(im):
     [ylen, xlen] = im.shape
