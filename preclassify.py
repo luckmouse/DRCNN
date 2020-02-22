@@ -47,7 +47,7 @@ def srad(im, delta):
             signal.convolve2d(c, [[0,0,0],[0,-1,0],[0,0,0]],  mode='same', boundary='symm')* \
             signal.convolve2d(X, [[0,0,0],[0,1,0],[0,-1,0]], mode='same', boundary='symm')
         X = X+delta/4*d
-        im = X[1:ylen+1, 1:ylen+1]
+        im = X[1:ylen+1, 1:xlen+1]
     return im
 
 def dicomp(im1, im2):
