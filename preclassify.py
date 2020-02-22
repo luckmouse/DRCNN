@@ -89,15 +89,15 @@ def hcluster(pix_vec, im_di):
     for i in range(1, 5):
         c = c+len(idx[4-i])
         if c < ttl:
-            res_lab[idx[4-i]] = 1
+            res_lab[idx[4-i]] = 2
         elif c >= ttl and c < ttr:
-            res_lab[idx[4-i]] = 0.5
+            res_lab[idx[4-i]] = 1.5
             flag_mid = 1
         elif flag_mid == 0:
-            res_lab[idx[4-i]] = 0.5
+            res_lab[idx[4-i]] = 1.5
             flag_mid = 1
         else:
-            res_lab[idx[4-i]] = 0
+            res_lab[idx[4-i]] = 1
     res_lab = res_lab.reshape(ylen, xlen)
     return res_lab
 
