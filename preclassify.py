@@ -1,3 +1,8 @@
+# @ Author: Feng Gao, Ocean University of China
+# @ Date: 2020-02-22
+# @ Email: gaofeng@ouc.edu.cn
+# @ Homepage: http://feng-gao.cn
+
 import numpy as np
 from scipy import signal
 from scipy.linalg import norm
@@ -52,6 +57,11 @@ def dicomp(im1, im2):
     im_di = srad(im_di, 0.15)
     return im_di
 
+# hiearchical FCM clustering
+# in the preclassification map, 
+# pixels with high probability to be unchanged are labeled 1
+# pixels with high probability to be changed are labeled 2
+# pixels with uncertainty are labeled 1.5
 
 def hcluster(pix_vec, im_di):
     print('... ... 1st round clustering ... ...')
@@ -84,7 +94,7 @@ def hcluster(pix_vec, im_di):
     for i in range(0, 5):
         idx.append(idx_tmp[idx_sort[i]])
     c = len(idx[4])
-    res_lab[idx[4]] = 1
+    res_lab[idx[4]] = 2
     flag_mid = 0
     for i in range(1, 5):
         c = c+len(idx[4-i])
